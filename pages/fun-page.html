@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun & Chill</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ====== Body ====== */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a18cd1, #fbc2eb);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            overflow: hidden;
+        }
+
+        /* ====== Heading ====== */
+        h2 {
+            font-size: 48px;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #fff, 0 0 20px #ff416c, 0 0 30px #ff416c;
+            animation: glowText 2s ease-in-out infinite alternate, fadeIn 1.5s ease forwards;
+            opacity: 0;
+        }
+
+        /* ====== Paragraph ====== */
+        p {
+            font-size: 22px;
+            color: #fff;
+            text-shadow: 0 0 5px #fff;
+            animation: fadeIn 2.5s ease forwards;
+            opacity: 0;
+        }
+
+        /* ====== Animations ====== */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glowText {
+            0% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #ff416c;
+            }
+
+            100% {
+                text-shadow: 0 0 20px #fff, 0 0 40px #ff416c, 0 0 60px #ff416c;
+            }
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* ====== Responsive ====== */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 38px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>R dekhaitam na ja beda.</h2>
+    <p>Sokh thakle koSto kore notun kore dekh 😁</p>
+
+</body>
+
+</html>

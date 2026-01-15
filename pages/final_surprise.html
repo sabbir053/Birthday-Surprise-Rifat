@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Final Surprise</title>
 
     <link rel="stylesheet" href="../styles.css">
 
@@ -17,6 +17,57 @@
             text-align: center;
             font-family: "Poppins", sans-serif;
         }
+
+        /* Responsive Button */
+        .btn-responsive {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .btn-responsive:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(45deg, #ff4b2b, #ff416c);
+        }
+
+        /* Arrow animation */
+        .btn-responsive::after {
+            content: "➜";
+            position: absolute;
+            right: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-responsive:hover::after {
+            right: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .btn-responsive {
+                font-size: 16px;
+                padding: 10px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .btn-responsive {
+                font-size: 14px;
+                padding: 8px 20px;
+            }
+        }
+
 
         /* Heading Glow */
         h1 {
@@ -113,6 +164,10 @@
         alt="Happy Birthday Dost">
     <img src="../assets/broo.jpeg" class="fall" style="left:30%; animation-delay:3s; width:60px;"
         alt="Happy Birthday Dost">
+
+
+
+    <a href="../pages/fun-page.html" class="btn-responsive">See Again ➜</a>
 
     <!-- Fireworks Background -->
     <canvas id="fireworks"></canvas>
