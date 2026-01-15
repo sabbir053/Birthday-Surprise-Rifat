@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+    <h1>💖 RIFAT You Are Amazing 💖</h1>
+    <p>এই পৃথিবীর সব হাসি তোমার জন্যই থাকুক...</p>
+    <p id="type"></p>
+
+    <script>
+        const text = "আজ তোমার Special Day... তুমি হাসির মতোই সুন্দর থাকো ❤️";
+        let i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                document.getElementById("type").textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 80);
+            }
+        }
+
+        window.onload = typeWriter;
+    </script>
+
+
+    <a href="./gallery.html" class="btn">Next ➜</a>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>

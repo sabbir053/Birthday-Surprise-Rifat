@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 50px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+p {
+    font-size: 20px;
+    animation: fadeIn 3s ease;
+    max-width: 700px;
+}
+
+a.btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: white;
+    color: #ff416c;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 18px;
+}
+
+a.btn:hover {
+    background: #ff1e66;
+    color: white;
+}
+
+img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Floating Hearts */
+.heart {
+    width: 40px;
+    height: 40px;
+    background: red;
+    position: absolute;
+    animation: heartFloat 3s infinite;
+    transform: rotate(45deg);
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    background: red;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -20px;
+    left: 0;
+}
+
+.heart::after {
+    left: 20px;
+    top: 0;
+}
+
+@keyframes heartFloat {
+    0% {
+        transform: rotate(45deg) translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotate(45deg) translateY(-100px);
+        opacity: 0;
+    }
+}
+
+/* =============== Responsive =============== */
+
+/* Tablet */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 38px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    a.btn {
+        font-size: 16px;
+        padding: 10px 25px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 30px;
+        line-height: 1.3;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    a.btn {
+        font-size: 15px;
+        padding: 10px 22px;
+    }
+
+    .heart {
+        width: 30px;
+        height: 30px;
+    }
+
+    .heart::before,
+    .heart::after {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Smooth Page Fade Effect */
+.fade {
+    animation: fadeInPage 1.2s ease both;
+    
+}
+
+@keyframes fadeInPage {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}

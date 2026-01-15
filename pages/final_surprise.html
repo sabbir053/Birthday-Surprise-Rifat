@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #000;
+            color: #fff;
+            text-align: center;
+            font-family: "Poppins", sans-serif;
+        }
+
+        /* Heading Glow */
+        h1 {
+            font-size: 50px;
+            margin-top: 50px;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px #ff3385;
+            }
+
+            100% {
+                text-shadow: 0 0 30px #ff66aa;
+            }
+        }
+
+        /* Falling Items */
+        .fall {
+            position: absolute;
+            top: -100px;
+            animation: drop 5s linear infinite;
+        }
+
+        @keyframes drop {
+            0% {
+                top: -100px;
+                transform: rotate(0deg);
+            }
+
+            100% {
+                top: 110%;
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Fireworks Canvas */
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+
+</head>
+
+<!-- <body>
+
+    <h1>🎂 Happy Birthday RIFAT 🎂</h1>
+    <p>আল্লাহ তোমার জীবনটা সুখে, শান্তিতে, সফলতায় পরিপূর্ণ করুক 💖</p>
+
+    <canvas id="confetti"></canvas>
+
+    <script>
+        function throwConfetti() {
+            for (let i = 0; i < 80; i++) {
+                let c = document.createElement("div");
+                c.style.position = "fixed";
+                c.style.width = "10px";
+                c.style.height = "10px";
+                c.style.background = "#" + Math.floor(Math.random() * 16777215).toString(16);
+                c.style.left = Math.random() * window.innerWidth + "px";
+                c.style.top = "-10px";
+                c.style.opacity = 1;
+                c.style.animation = "fall 3s linear infinite";
+                document.body.appendChild(c);
+
+                setTimeout(() => c.remove(), 3000);
+            }
+        }
+
+        setInterval(throwConfetti, 500);
+    </script>
+
+    <a href="/index.html" class="btn">Again 🔁</a>
+
+</body> -->
+
+<body>
+
+    <h1>Happy Birthday <br> Dear Dost <br> 🎉 RIFAT 🎉</h1>
+    <p>❤️তোর দিনটা হোক অনেক সুন্দর এবং আনন্দময়!❤️</p>
+
+    <!-- Falling Images -->
+
+
+    <img src="/assets/ballon.png" class="fall" style="left:10%; animation-delay:0s; width:80px;" alt="Red Balloon">
+    <img src="/assets/ballon.png" class="fall" style="left:50%; animation-delay:1s; width:70px;" alt="Blue Balloon">
+    <img src="/assets/broo.jpeg" class="fall" style="left:80%; animation-delay:2s; width:90px;" alt="Gift Box">
+    <img src="/assets/broo.jpeg" class="fall" style="left:30%; animation-delay:3s; width:60px;" alt="Yellow Star">
+
+    <!-- Fireworks Background -->
+    <canvas id="fireworks"></canvas>
+
+    <script>
+        // Fireworks Code
+        const canvas = document.getElementById("fireworks");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particles = [];
+
+        function randomColor() {
+            return `hsl(${Math.random() * 360}, 100%, 60%)`;
+        }
+
+        function createFirework() {
+            let x = Math.random() * canvas.width;
+            let y = Math.random() * canvas.height / 2;
+
+            for (let i = 0; i < 50; i++) {
+                particles.push({
+                    x,
+                    y,
+                    color: randomColor(),
+                    radius: Math.random() * 3 + 2,
+                    vx: (Math.random() - 0.5) * 8,
+                    vy: (Math.random() - 0.5) * 8,
+                    alpha: 1,
+                });
+            }
+        }
+
+        function animate() {
+            ctx.fillStyle = "rgba(0,0,0,0.2)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            particles.forEach((p, i) => {
+                p.x += p.vx;
+                p.y += p.vy;
+                p.alpha -= 0.01;
+
+                ctx.globalAlpha = p.alpha;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = p.color;
+                ctx.fill();
+
+                if (p.alpha <= 0) particles.splice(i, 1);
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        setInterval(createFirework, 700);
+        animate();
+    </script>
+
+</body>
+
+</html>
